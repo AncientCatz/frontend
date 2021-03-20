@@ -5,7 +5,7 @@ export default {
       description: 'Платформа для проведения курсов. ' +
         'Сделана для курсов по программированию (одна из главных функций - проверка кода), ' +
         'но может использоваться и для других целей<br><br>' +
-        'Используется для курсов на <a href="https://progtime.net">progtime.net</a>',
+        'Используется для курсов на <a href="https://progtime.net" target="_blank">progtime.net</a>',
       buttons: [
         {title: 'Демо', href: 'https://demo.progtime.net'},
         {title: 'Курсы', href: 'https://progtime.net'},
@@ -25,6 +25,7 @@ export default {
       description: 'Простая ORM на основе Pydantic и Databases, совместимая с FastAPI',
       buttons: [
         {title: 'Код', href: 'https://github.com/vanutp/fox_orm'},
+        {title: 'Документация', href: 'https://docs.vanutp.dev/fox_orm/'},
       ],
     },
     {
