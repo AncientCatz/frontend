@@ -1,0 +1,56 @@
+image: node:latest
+
+stages:
+  - install_dependencies
+  - build
+  - deploy
+
+install_dependencies:
+  stage: install_dependencies
+  cache:
+    key: $CI_COMMIT_REF_SLUG-$CI_PROJECT_DIR
+    paths:
+      - node_modules/
+  script:
+    - npm ci
+    - npm rebuild node-sass
+  only:
+    changes:
+      - .gitlab-ci.yml
+      - package-lock.json
+
+build:
+  stage: build
+  cache:
+    key: $CI_COMMIT_REF_SLUG-$CI_PROJECT_DIR
+    paths:
+      - node_modules/
+    policy: pull
+  script:
+    - npm run build
+  artifacts:
+    paths:
+      - dist/
+
+.ssh:
+  before_script:
+    - 'which ssh-agent || ( apt update -y && apt install openssh-client -y )'
+    - 'which rsync || ( apt update -y && apt install rsync -y )'
+    - mkdir -p ~/.ssh
+    - eval $(ssh-agent -s)
+    - 'echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config'
+    - ssh-add <(echo $PRIVATE_KEY | base64 -d)
+
+.deploy:
+  stage: deploy
+  extends: .ssh
+  script:
+    - ssh $REMOTE_USER@$REMOTE_HOST "rm -rf $REMOTE_PATH"
+    - scp -r dist/ $REMOTE_USER@$REMOTE_HOST:$REMOTE_PATH
+
+deploy_prod:
+  extends: .deploy
+  environment:
+    name: production
+    url: https://vanutp.dev
+  when: manual
