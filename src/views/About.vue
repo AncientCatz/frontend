@@ -40,6 +40,10 @@ export default {
 <style scoped lang="stylus">
 section
   padding 0 1rem
+  max-width 800px
+  margin 0 auto
+  align-self center
+
 p
   font-size 1.5rem
 h1
