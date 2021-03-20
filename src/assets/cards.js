@@ -135,10 +135,6 @@ export default {
       ]
     },
     {
-      title: 'Paperfeed',
-      description: 'Лента (фид) для Telegram как в вк',
-    },
-    {
       title: 'CCG',
       description: 'Шелл для Windows',
       buttons: [
