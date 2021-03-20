@@ -54,7 +54,7 @@ export default {
     {
       title: 'Page watcher',
       description: 'Telegram-бот, оповещающий об изменениях определенной страницы<br><br>' +
-        'Идея <a href="tg://resolve?domain=ilyakrasnovv">@ilyakrasnovv</a>',
+        'Идея <a href="tg://resolve?domain=CHUBBY_D">@CHUBBY_D</a>',
       buttons: [
         {title: 'Код', href: 'https://git.vanutp.dev/ilyakrasnovv/lksh_results_bot'},
       ],
