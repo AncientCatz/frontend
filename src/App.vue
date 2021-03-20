@@ -55,13 +55,13 @@ img.emoji
 ::-webkit-scrollbar
   width 8px
   height 8px
-  background-color #fff
+  background-color #aaa
   border-radius 10px
 
 
 ::-webkit-scrollbar-thumb
   border-radius 10px
-  background-color #aaa
+  background-color #666
   border solid 3px transparent
 
 
