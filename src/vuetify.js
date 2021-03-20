@@ -15,7 +15,6 @@ const icons = {
 
 let vuetifyConfig = {
   icons: {
-    iconfont: 'faSvg',
     values: {},
   },
 }
