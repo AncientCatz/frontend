@@ -3,7 +3,7 @@
     back-button
     section
       div.cards-row
-        cards-column(title='Рабочие проекты (поддержка)' :cards='cards.active')
+        cards-column(title='Рабочие проекты' :cards='cards.active')
         cards-column(title='В разработке/идеи' :cards='cards.inProgress')
         cards-column(title='Замороженые/заброшенные' :cards='cards.frozen')
         cards-column(title='Хостинг (не мои проекты на моем сервере)' :cards='cards.hosting')
