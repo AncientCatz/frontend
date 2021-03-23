@@ -1,6 +1,12 @@
 import Vue from 'vue'
 import Vuetify from 'vuetify/lib/framework'
+import {library} from '@fortawesome/fontawesome-svg-core'
 import {FontAwesomeIcon} from '@fortawesome/vue-fontawesome'
+import {faArrowLeft} from '@fortawesome/free-solid-svg-icons'
+import {faGitlab, faGithubAlt, faTelegramPlane} from '@fortawesome/free-brands-svg-icons'
+
+Vue.component('font-awesome-icon', FontAwesomeIcon)
+library.add(faArrowLeft, faGitlab, faGithubAlt, faTelegramPlane)
 
 Vue.use(Vuetify)
 
@@ -8,8 +14,6 @@ const icons = {
   telegram: ['fab', 'telegram-plane'],
   github: ['fab', 'github-alt'],
   gitlab: ['fab', 'gitlab'],
-  sun: ['fas', 'sun'],
-  moon: ['fas', 'moon'],
   back: ['fas', 'arrow-left'],
 }
 
