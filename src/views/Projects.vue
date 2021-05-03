@@ -35,7 +35,7 @@ export default {
     *:nth-of-type(1)
       padding-left 1.5rem
 
-    @media (max-width: 1400px)
+    @media (max-width: 1300px)
       *:nth-of-type(3)
         padding-left 1.5rem
 
@@ -48,6 +48,6 @@ export default {
     @media screen and (min-width: 800px)
       padding-right 1.5rem
       width 50%
-    @media screen and (min-width: 1400px)
+    @media screen and (min-width: 1300px)
       width 25%
 </style>

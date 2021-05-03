@@ -22,7 +22,7 @@ export default {
   text-align center
 
 .cards-col
-  @media screen and (min-width: 1400px)
+  @media screen and (min-width: 1300px)
     height calc(100vh - 60px)
   display: flex;
   flex-direction: column;
