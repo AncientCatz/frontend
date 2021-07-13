@@ -3,7 +3,7 @@
     back-button
     section
       h1 Обо мне:
-      p Иван Филипенков, 15 лет, программист,!{' '}
+      p Иван Филипенков, {{ authorAge }}, программист,!{' '}
         span(style='text-decoration: line-through;') дизайнер
       p Люблю разбираться во всем новом и запутанном
       p Пишу в основном бэкенд сайтов и ботов
@@ -33,6 +33,13 @@ export default {
       })
       .catch(() => {
         this.codedText = '⚠️ошибка загрузки⚠️'
+      })
+    axios.get(process.env.VUE_APP_API_URI + '/author_age')
+      .then((resp) => {
+        this.authorAge = resp.data
+      })
+      .catch(() => {
+        this.authorAge = 'родился в 2005 году'
       })
   }
 }
