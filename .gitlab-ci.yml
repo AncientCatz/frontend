@@ -1,31 +1,14 @@
 image: node:latest
 
 stages:
-  - install_dependencies
   - build
   - deploy
 
-install_dependencies:
-  stage: install_dependencies
-  cache:
-    key: $CI_COMMIT_REF_SLUG-$CI_PROJECT_DIR
-    paths:
-      - node_modules/
-  script:
-    - npm ci
-    - npm rebuild node-sass
-  only:
-    changes:
-      - .gitlab-ci.yml
-      - package-lock.json
-
 build:
   stage: build
-  cache:
-    key: $CI_COMMIT_REF_SLUG-$CI_PROJECT_DIR
-    paths:
-      - node_modules/
-    policy: pull
+  before_script:
+    - npm ci
+    - npm rebuild node-sass
   script:
     - npm run build
   artifacts:
@@ -54,3 +37,5 @@ deploy_prod:
     name: production
     url: https://vanutp.dev
   when: manual
+  only:
+    - master
